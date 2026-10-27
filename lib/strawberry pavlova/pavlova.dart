@@ -7,7 +7,7 @@ class Pavlova extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Pavlova'),
+        title: const Text('Entrina - Pavlova Activity'),
       ),
       body: Center(
         child: ListView(
