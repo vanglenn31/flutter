@@ -1,7 +1,6 @@
 <<<<<<< HEAD
 # flutter
 =======
-# my_first_app
 
 # Flutter Studies 📱
 
