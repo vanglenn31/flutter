@@ -16,6 +16,8 @@ class Pavlova extends StatelessWidget {
             buildRow(2, 90),
             const SizedBox(height: 10),
             buildRowTabs(),
+            const SizedBox(height: 10),
+            
           ],
         ),
         
