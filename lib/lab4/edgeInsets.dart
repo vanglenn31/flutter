@@ -25,6 +25,7 @@ class Edgeinsets extends StatelessWidget {
 
             const SizedBox(height: 30),
             Container(
+              width: double.infinity,
               color: Colors.grey[300],
               child: Container(
                 color: Colors.yellow,
