@@ -7,7 +7,7 @@ class AxisAligment extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Task 4 - Entrina'),
+        title: const Text('Task 5 - Entrina'),
       ),
       body: Column(
         children: [
@@ -19,25 +19,29 @@ class AxisAligment extends StatelessWidget {
             ),
           ),
           Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                Container(
-                  color: Colors.red,
-                  height: 90,
-                  width: 90,
+            child: Center(
+              child: 
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Container(
+                      color: Colors.red,
+                      height: 90,
+                      width: 90,
+                    ),
+                    Container(
+                      color: Colors.yellow,
+                      width: 80,
+                      height: 80,
+                    ),
+                    Container(
+                      color: Colors.blue,
+                      width: 70,
+                      height: 70,
+                    ),
+                  ],
                 ),
-                Container(
-                  color: Colors.yellow,
-                  width: 80,
-                  height: 80,
-                ),
-                Container(
-                  color: Colors.blue,
-                  width: 70,
-                  height: 70,
-                ),
-              ],
+              
             ),
           ),
         ],
