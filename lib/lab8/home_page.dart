@@ -1,6 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:my_first_app/lab8/auth_service.dart';
 import 'package:my_first_app/lab8/crud_service.dart';
+import 'package:my_first_app/lab8/login_page.dart';
 
 class HomePage extends StatelessWidget {
   final CrudService service = CrudService();
@@ -16,6 +18,16 @@ class HomePage extends StatelessWidget {
         title: const Text('Firebase Entrina'),
         centerTitle: true,
         backgroundColor: Colors.teal,
+        actions: [
+          IconButton(
+            icon: Icon(Icons.logout),
+            onPressed: () {
+              AuthService().signOut();
+              Navigator.pushReplacement(context, 
+              MaterialPageRoute(builder: (_) => LoginPage()));
+            },
+          ),
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.teal,

@@ -4,8 +4,10 @@ import 'package:my_first_app/lab%202/intro.dart';
 import 'package:my_first_app/lab%202/page1.dart';
 import 'package:my_first_app/lab%202/page2.dart';
 import 'package:my_first_app/lab5/axisalignment.dart';
-import 'package:my_first_app/lab6/login.dart';
+
+import 'package:my_first_app/lab8/auth_service.dart';
 import 'package:my_first_app/lab8/home_page.dart';
+import 'package:my_first_app/lab8/login_page.dart';
 import 'package:my_first_app/socmed/auth/login.dart';
 import 'package:my_first_app/strawberry%20pavlova/pavlova.dart';
 import 'package:my_first_app/lab4/edgeInsets.dart';
@@ -33,7 +35,22 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: HomePage(),
+      home: StreamBuilder(
+        stream: AuthService().userStream,
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.waiting){
+            return const Scaffold(
+              body: Center(child: CircularProgressIndicator()),
+            );
+          }
+          if (snapshot.hasData){
+            return HomePage();
+          }
+          else {
+            return LoginPage();
+          }
+        },
+      ),
     );
   }
 
